@@ -12,10 +12,11 @@
 	<hr>
 	<!-- Way 2  -->
 	<div align="center">
-		<form:form modelAttribute="user1">
+		<form:form modelAttribute="user">
 			<p>You are able to see the result</p>
 				Your Name :<form:input path="userName" /></br>
 				Crush Name :<form:input path="crushName" />
+				
 		</form:form>
 	</div>
 

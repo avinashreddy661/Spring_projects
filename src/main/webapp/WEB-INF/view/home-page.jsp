@@ -4,12 +4,22 @@
 
 <head>
 <title>Homepage</title>
+
+<style type="text/css">
+.error {
+	color: red;
+	position: fixed;
+	text-align: left;
+	margin-left: 30px;
+}
+</style>
+
 <script>
 	function validationfun() {
 		var userame = document.getElementById("userName").value;
 
-		if (userame.length < 1) {
-			alert("enter valid input");
+		if (userame.length < 3) {
+			alert("your name should have atleast 3 chars");
 			return false;
 		}
 		elase
@@ -30,15 +40,22 @@
 	<!-- way 2 -->
 	<div align="center">
 		<form:form action="processing-homepage" modelAttribute="user"
-			>
+			method="get" onsubmit="return validationfun()">
 			<p>
 				<label>Your Name :</label>
 				<form:input id="userName" path="userName" />
+				<form:errors path="userName" cssClass="error"></form:errors>
 			</p>
 
 			<p>
 				<label>Crush Name :</label>
 				<form:input path="crushName" />
+				<form:errors path="crushName" cssClass="error"></form:errors>
+			</p>
+			<p>
+				<form:checkbox path="termAndCondition" id="check" />
+				<label>I'm agreeing that this is for fun.</label>
+				<form:errors path="termAndCondition" cssClass="error"></form:errors>
 			</p>
 			<input type="submit" value="calculate">
 		</form:form>

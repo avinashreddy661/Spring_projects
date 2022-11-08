@@ -1,11 +1,14 @@
 package com.seleniumexpress.ic.controller;
 
+import java.util.List;
+
 import javax.validation.Valid;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.BindingResultUtils;
+import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -21,10 +24,18 @@ public class LCAppController {
 	}
 
 	@RequestMapping("/processing-homepage")
-	public String showResult(@Valid @ModelAttribute("user1") UserInfoDTO userInfo, BindingResult result) {
+	public String showResult(@Valid @ModelAttribute("user") UserInfoDTO userInfo, BindingResult result) {
 		
+		System.out.println("userinfo is termand condition is accepted: "+userInfo.isTermAndCondition());
 		if(result.hasErrors()) {
 			System.out.println("My form has errors");
+			List<ObjectError> allErrors = result.getAllErrors();
+			for (ObjectError objectError : allErrors) {
+				System.out.println(objectError);
+			}
+			
+			
+			return "home-page";
 		}
 
 		return "result-page";
