@@ -11,6 +11,8 @@ public class UserRegistrationDTO {
 	private String hobby[];
 	
 	private String gender;
+	
+	private CommunicationDTO communicationDTO;
 
 	public String getName() {
 		return name;
@@ -58,6 +60,20 @@ public class UserRegistrationDTO {
 
 	public void setGender(String gender) {
 		this.gender = gender;
+	}
+
+	/**
+	 * @return the communicationDTO
+	 */
+	public CommunicationDTO getCommunicationDTO() {
+		return communicationDTO;
+	}
+
+	/**
+	 * @param communicationDTO the communicationDTO to set
+	 */
+	public void setCommunicationDTO(CommunicationDTO communicationDTO) {
+		this.communicationDTO = communicationDTO;
 	}
 	
 

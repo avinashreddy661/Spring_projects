@@ -33,7 +33,21 @@
 					path="hobby" value="Football" /> Travelling : <form:checkbox
 					path="hobby" value="Travelling" /> <br> <label>Gender
 					: </label> Male : <form:radiobutton path="gender" value="Male" /> Female :
-				<form:radiobutton path="gender" value="Female" /> <br> <input
+				<form:radiobutton path="gender" value="Female" /> <br>
+				
+				<br>
+				<div align="center">
+				<h3>Communication : </h3>
+				<label>Email : </label>
+				<form:input path="communicationDTO.email"/>
+				
+				<label>Phone : </label>
+				<form:input path="communicationDTO.phone"/>
+				
+				
+				
+				</div>
+				 <input
 				type="submit" vale="Reister">
 		</form:form>
 	</div>

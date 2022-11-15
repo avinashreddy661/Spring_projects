@@ -22,7 +22,9 @@ ${temp}
 
 	<br> Gender : ${userregistraction.gender}
 
+<br> Email: ${userregistraction.communicationDTO.email }
 
+<br> Phone : ${userregistraction.communicationDTO.phone}
 
 
 </body>
